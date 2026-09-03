@@ -111,10 +111,53 @@ body {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
+/* OPG Galerija sekcija */
+.opg-gallery {
+    padding: 80px 20px;
+    background: var(--light-bg);
+}
+
+.opg-gallery h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--primary-color);
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 2rem;
+    align-items: stretch;
+}
+
+.gallery-item {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s;
+}
+
+.gallery-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.gallery-item.main-image {
+    grid-row: span 2;
+}
+
 /* About sekcija */
 .about {
     padding: 80px 20px;
-    background: var(--light-bg);
+    background: var(--white);
 }
 
 .about h2 {
@@ -144,7 +187,7 @@ body {
 }
 
 .feature {
-    background: var(--white);
+    background: var(--light-bg);
     padding: 1.5rem;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
@@ -195,8 +238,15 @@ body {
 
 .category-desc {
     color: var(--text-light);
-    margin-bottom: 2rem;
+    margin-bottom: 0.5rem;
     font-style: italic;
+}
+
+.price-info {
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
 }
 
 .products-grid {
@@ -236,6 +286,13 @@ body {
 .product-card p {
     color: var(--text-light);
     font-size: 0.95rem;
+}
+
+.price-highlight {
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-top: 1rem;
+    font-size: 1rem;
 }
 
 /* Recenzije sekcija */
@@ -316,6 +373,120 @@ body {
 
 .facebook-button i {
     margin-right: 0.5rem;
+}
+
+/* Dostava sekcija */
+.delivery {
+    padding: 80px 20px;
+    background: var(--white);
+}
+
+.delivery h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 3rem;
+    color: var(--primary-color);
+}
+
+.delivery-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.delivery-card {
+    background: linear-gradient(135deg, var(--secondary-color), var(--light-bg));
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    border-left: 5px solid var(--primary-color);
+    transition: all 0.3s;
+}
+
+.delivery-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.delivery-card h3 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.delivery-schedule {
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.delivery-card p {
+    color: var(--text-dark);
+    font-weight: 500;
+}
+
+.delivery-info {
+    background: var(--light-bg);
+    padding: 2.5rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.delivery-info h4 {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.delivery-info p {
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+    font-size: 1.05rem;
+}
+
+.delivery-methods {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+}
+
+.delivery-method {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--white);
+    padding: 12px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: 600;
+    transition: all 0.3s;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.delivery-method:hover {
+    background: var(--primary-color);
+    color: var(--white);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.delivery-method i {
+    font-size: 1.2rem;
+}
+
+.delivery-note {
+    background: var(--white);
+    padding: 1rem;
+    border-radius: 10px;
+    color: var(--primary-color);
+    font-weight: 600;
+    font-size: 1.1rem;
 }
 
 /* Lokacija sekcija */
@@ -481,8 +652,17 @@ body {
         font-size: 1rem;
     }
 
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery-item.main-image {
+        grid-row: span 1;
+    }
+
     .about-content,
-    .contact-content {
+    .contact-content,
+    .delivery-content {
         grid-template-columns: 1fr;
     }
 
@@ -503,6 +683,10 @@ body {
         padding: 1.5rem;
     }
 
+    .delivery-card {
+        padding: 1.5rem;
+    }
+
     .logo h1 {
         font-size: 1.3rem;
     }
@@ -514,5 +698,14 @@ body {
     .facebook-button {
         padding: 12px 30px;
         font-size: 1rem;
+    }
+
+    .delivery-methods {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .delivery-method {
+        justify-content: center;
     }
 }
